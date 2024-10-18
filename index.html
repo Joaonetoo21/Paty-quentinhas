@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paty Quentinhas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #ffebee; /* Rosa claro */
+        }
+        header {
+            background-color: #e91e63; /* Rosa forte */
+        }
+        .accordion {
+            background-color: #fff; /* Branco */
+            color: #000; /* Texto em preto */
+        }
+        .btn-link {
+            color: #e91e63; /* Texto do botão em rosa forte */
+        }
+    </style>
+</head>
+<body>
+    <header class="text-white text-center py-3">
+        <div class="d-flex justify-content-center align-items-center">
+            <img src="images/logo.png" alt="Logo Paty Quentinhas" style="width: 50px; height: 50px; margin-right: 10px;">
+            <h1 class="mb-0">Paty Quentinhas</h1>
+        </div>
+        <p>Almoços caseiros deliciosos!</p>
+    </header>
+    <main class="container mt-4">
+        <h2>Nossos Pratos</h2>
+
+        <!-- Segunda-feira -->
+<div class="mt-4">
+    <h3>Segunda-feira</h3>
+    <button class="btn btn-link" data-toggle="collapse" data-target="#segunda">Ver Pratos</button>
+    <div class="collapse" id="segunda">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Pratos Disponíveis na Segunda</h5>
+
+                <!-- Prato 1 -->
+                <div class="mt-2">
+                    <img src="images/pratoseg1.jpg" class="img-fluid" alt="Quiabada">
+                    <h6>Quiabada</h6>
+                    <p> Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Quiabada">Comprar</button>
+                </div>
+
+                <!-- Prato 2 -->
+                <div class="mt-2">
+                    <img src="images/pratoseg2.jpg" class="img-fluid" alt="Omelete de Carne">
+                    <h6>Omelete de Carne</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="omelete de Carne">Comprar</button>
+                </div>
+
+                <!-- Prato 3 -->
+                <div class="mt-2">
+                    <img src="images/pratoseg3.jpg" class="img-fluid" alt="Almôndegas ao Molho">
+                    <h6>Almôndegas ao Molho</h6>
+                    <p>Disponíveis Tamanhos P e G</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Almôndegas ao Molho">Comprar</button>
+                </div>
+
+                <!-- Prato 4 -->
+                <div class="mt-2">
+                    <img src="images/pratofix4.jpg" class="img-fluid" alt="Filé de Frango Grelhado">
+                    <h6>Filé de Frango Grelhado</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango Grelhado">Comprar</button>
+                </div>
+
+                <!-- Prato 5 -->
+                <div class="mt-2">
+                    <img src="images/pratofix5.jpg" class="img-fluid" alt="Filé de Frango à Parmegiana">
+                    <h6>Filé de Frango à Parmegiana</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango à Parmegiana">Comprar</button>
+                </div>
+
+                <!-- Prato 6 -->
+                <div class="mt-2">
+                    <img src="images/pratofix6.jpg" class="img-fluid" alt="Filé de Frango à Milanesa">
+                    <h6>Filé de Frango à Milanesa</h6>
+                    <p>Disponíveis Tamanhos P e G</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango à Milanesa">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Perguntas -->
+<div class="modal fade" id="pedidoModal" tabindex="-1" aria-labelledby="pedidoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pedidoModalLabel">Faça seu Pedido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="pedidoForm">
+                    <div class="mb-3">
+                        <label for="tamanho" class="form-label">Qual Tamanho do Almoço?</label>
+                        <select class="form-select" id="tamanho" required>
+                            <option value="P">P</option>
+                            <option value="G">G</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Escolha os Acompanhamentos (máximo de 3):</label>
+                        <div id="acompanhamentos">
+                            <label><input type="checkbox" name="acompanhamento" value="Arroz" class="acompanhamento"> Arroz</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Macarrão" class="acompanhamento"> Macarrão</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Arroz Integral" class="acompanhamento"> Arroz Integral</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Feijão Tropeiro" class="acompanhamento"> Feijão Tropeiro</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Feijão de Caldo" class="acompanhamento"> Feijão de Caldo</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Salada Crua" class="acompanhamento"> Salada Crua</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Legumes com Grão de Bico" class="acompanhamento"> Legumes com Grão de Bico</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Legumes" class="acompanhamento"> Legumes</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Purê de Batatas" class="acompanhamento"> Purê de Batatas</label><br>
+                        </div>
+                        <div id="acompanhamentoWarning" class="text-danger" style="display:none;">Você pode escolher no máximo 3 acompanhamentos.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="observacao" class="form-label">Observações (máx. 100 caracteres):</label>
+                        <textarea class="form-control" id="observacao" rows="2" maxlength="100" placeholder="Escreva suas observações aqui..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pagamento" class="form-label">Forma de Pagamento:</label>
+                        <select class="form-select" id="pagamento" required>
+                            <option value="cartao_credito">Cartão de Crédito</option>
+                            <option value="cartao_debito">Cartão de Débito</option>
+                            <option value="dinheiro">Dinheiro</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="entrega" class="form-label">Entrega ou Retirada no Local?</label>
+                        <select class="form-select" id="entrega" required>
+                            <option value="entrega">Entrega</option>
+                            <option value="retirada">Retirada no Local</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelarPedido" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="confirmarPedido">Confirmar Pedido</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let pratoSelecionado = '';
+
+    $('#pedidoModal').on('show.bs.modal', function(event) {
+        const button = $(event.relatedTarget);
+        pratoSelecionado = button.data('prato');
+    });
+
+    document.querySelectorAll('.acompanhamento').forEach((checkbox) => {
+        checkbox.addEventListener('change', function() {
+            const checkedCount = document.querySelectorAll('input[name="acompanhamento"]:checked').length;
+            const warning = document.getElementById('acompanhamentoWarning');
+            if (checkedCount > 3) {
+                this.checked = false;
+                warning.style.display = 'block';
+            } else {
+                warning.style.display = 'none';
+            }
+        });
+    });
+
+    document.getElementById('confirmarPedido').onclick = function() {
+        const tamanho = document.getElementById('tamanho').value;
+        const pagamento = document.getElementById('pagamento').value;
+        const entrega = document.getElementById('entrega').value;
+        const observacao = document.getElementById('observacao').value;
+
+        const acompanhamentosSelecionados = Array.from(document.querySelectorAll('input[name="acompanhamento"]:checked'))
+            .map(el => el.value)
+            .join(', ');
+
+        const mensagem = `Olá, quero pedir o prato ${pratoSelecionado}. Tamanho: ${tamanho}, Acompanhamentos: ${acompanhamentosSelecionados}, Observações: ${observacao}, Forma de pagamento: ${pagamento}, Entrega ou Retirada: ${entrega}.`;
+        const telefone = '5571992168451';
+
+        window.open(`https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`, '_blank');
+        $('#pedidoModal').modal('hide');
+    };
+
+    document.getElementById('cancelarPedido').onclick = function() {
+        $('#pedidoModal').modal('hide');
+    };
+</script>
+
+
+
+        <!-- Terça-feira -->
+<div class="mt-4">
+    <h3>Terça-feira</h3>
+    <button class="btn btn-link" data-toggle="collapse" data-target="#terca">Ver Pratos</button>
+    <div class="collapse" id="terca">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Pratos Disponíveis na Terça</h5>
+                                       <!-- Prato 1 -->
+                <div class="mt-2">
+                    <img src="images/pratoter1.jpg" class="img-fluid" alt="Xinxim de Bofe">
+                    <h6>Xinxim de Bofe</h6>
+                    <p> Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Xinxim de Bofe">Comprar</button>
+                </div>
+
+                <!-- Prato 2 -->
+                <div class="mt-2">
+                    <img src="images/pratoter2.jpg" class="img-fluid" alt="Frango Assado">
+                    <h6>Frango Assado</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Frango Assado">Comprar</button>
+                </div>
+
+                <!-- Prato 3 -->
+                <div class="mt-2">
+                    <img src="images/pratoter3.jpg" class="img-fluid" alt="Panquecas de Carne ou Frango">
+                    <h6>Panquecas de Carne ou Frango</h6>
+                    <p>Disponíveis Tamanhos P e G</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Panquecas de Carne ou Frango">Comprar</button>
+                </div>
+
+                <!-- Prato 4 -->
+                <div class="mt-2">
+                    <img src="images/pratofix4.jpg" class="img-fluid" alt="Filé de Frango Grelhado">
+                    <h6>Filé de Frango Grelhado</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango Grelhado">Comprar</button>
+                </div>
+
+                <!-- Prato 5 -->
+                <div class="mt-2">
+                    <img src="images/pratofix5.jpg" class="img-fluid" alt="Filé de Frango à Parmegiana">
+                    <h6>Filé de Frango à Parmegiana</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango à Parmegiana">Comprar</button>
+                </div>
+
+                <!-- Prato 6 -->
+                <div class="mt-2">
+                    <img src="images/pratofix6.jpg" class="img-fluid" alt="Filé de Frango à Milanesa">
+                    <h6>Filé de Frango à Milanesa</h6>
+                    <p>Disponíveis Tamanhos P e G</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango à Milanesa">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Perguntas -->
+<div class="modal fade" id="pedidoModal" tabindex="-1" aria-labelledby="pedidoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pedidoModalLabel">Faça seu Pedido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="pedidoForm">
+                    <div class="mb-3">
+                        <label for="tamanho" class="form-label">Qual Tamanho do Almoço?</label>
+                        <select class="form-select" id="tamanho" required>
+                            <option value="P">P</option>
+                            <option value="G">G</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Escolha os Acompanhamentos (máximo de 3):</label>
+                        <div id="acompanhamentos">
+                            <label><input type="checkbox" name="acompanhamento" value="Arroz" class="acompanhamento"> Arroz</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Macarrão" class="acompanhamento"> Macarrão</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Arroz Integral" class="acompanhamento"> Arroz Integral</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Feijão Tropeiro" class="acompanhamento"> Feijão Tropeiro</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Feijão de Caldo" class="acompanhamento"> Feijão de Caldo</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Salada Crua" class="acompanhamento"> Salada Crua</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Legumes com Grão de Bico" class="acompanhamento"> Legumes com Grão de Bico</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Legumes" class="acompanhamento"> Legumes</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Purê de Batatas" class="acompanhamento"> Purê de Batatas</label><br>
+                        </div>
+                        <div id="acompanhamentoWarning" class="text-danger" style="display:none;">Você pode escolher no máximo 3 acompanhamentos.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="observacao" class="form-label">Observações (máx. 100 caracteres):</label>
+                        <textarea class="form-control" id="observacao" rows="2" maxlength="100" placeholder="Escreva suas observações aqui..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pagamento" class="form-label">Forma de Pagamento:</label>
+                        <select class="form-select" id="pagamento" required>
+                            <option value="cartao_credito">Cartão de Crédito</option>
+                            <option value="cartao_debito">Cartão de Débito</option>
+                            <option value="dinheiro">Dinheiro</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="entrega" class="form-label">Entrega ou Retirada no Local?</label>
+                        <select class="form-select" id="entrega" required>
+                            <option value="entrega">Entrega</option>
+                            <option value="retirada">Retirada no Local</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelarPedido" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="confirmarPedido">Confirmar Pedido</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let pratoSelecionado = '';
+
+    $('#pedidoModal').on('show.bs.modal', function(event) {
+        const button = $(event.relatedTarget);
+        pratoSelecionado = button.data('prato');
+    });
+
+    document.querySelectorAll('.acompanhamento').forEach((checkbox) => {
+        checkbox.addEventListener('change', function() {
+            const checkedCount = document.querySelectorAll('input[name="acompanhamento"]:checked').length;
+            const warning = document.getElementById('acompanhamentoWarning');
+            if (checkedCount > 3) {
+                this.checked = false;
+                warning.style.display = 'block';
+            } else {
+                warning.style.display = 'none';
+            }
+        });
+    });
+
+    document.getElementById('confirmarPedido').onclick = function() {
+        const tamanho = document.getElementById('tamanho').value;
+        const pagamento = document.getElementById('pagamento').value;
+        const entrega = document.getElementById('entrega').value;
+        const observacao = document.getElementById('observacao').value;
+
+        const acompanhamentosSelecionados = Array.from(document.querySelectorAll('input[name="acompanhamento"]:checked'))
+            .map(el => el.value)
+            .join(', ');
+
+        const mensagem = `Olá, quero pedir o prato ${pratoSelecionado}. Tamanho: ${tamanho}, Acompanhamentos: ${acompanhamentosSelecionados}, Observações: ${observacao}, Forma de pagamento: ${pagamento}, Entrega ou Retirada: ${entrega}.`;
+        const telefone = '5571992168451';
+
+        window.open(`https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`, '_blank');
+        $('#pedidoModal').modal('hide');
+    };
+
+    document.getElementById('cancelarPedido').onclick = function() {
+        $('#pedidoModal').modal('hide');
+    };
+</script>
+
+        <!-- Quarta-feira -->
+<div class="mt-4">
+    <h3>Quarta-feira</h3>
+    <button class="btn btn-link" data-toggle="collapse" data-target="#quarta">Ver Pratos</button>
+    <div class="collapse" id="quarta">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Pratos Disponíveis na Quarta</h5>
+                         <!-- Prato 1 -->
+                <div class="mt-2">
+                    <img src="images/pratoqua1.jpg" class="img-fluid" alt="Cozido com Pirão">
+                    <h6>Cozido com Pirão</h6>
+                    <p> Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Cozido com Pirão">Comprar</button>
+                </div>
+
+                <!-- Prato 2 -->
+                <div class="mt-2">
+                    <img src="images/pratoqua2.jpg" class="img-fluid" alt="Torta de Frango c/Catupiry">
+                    <h6>Torta de Frango c/Catupiry</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Torta de Frango c/Catupiry">Comprar</button>
+                </div>
+
+                
+                <!-- Prato 3 -->
+                <div class="mt-2">
+                    <img src="images/pratofix4.jpg" class="img-fluid" alt="Filé de Frango Grelhado">
+                    <h6>Filé de Frango Grelhado</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango Grelhado">Comprar</button>
+                </div>
+
+                <!-- Prato 4 -->
+                <div class="mt-2">
+                    <img src="images/pratofix5.jpg" class="img-fluid" alt="Filé de Frango à Parmegiana">
+                    <h6>Filé de Frango à Parmegiana</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango à Parmegiana">Comprar</button>
+                </div>
+
+                <!-- Prato 5 -->
+                <div class="mt-2">
+                    <img src="images/pratofix6.jpg" class="img-fluid" alt="Filé de Frango à Milanesa">
+                    <h6>Filé de Frango à Milanesa</h6>
+                    <p>Disponíveis Tamanhos P e G</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango à Milanesa">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Perguntas -->
+<div class="modal fade" id="pedidoModal" tabindex="-1" aria-labelledby="pedidoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pedidoModalLabel">Faça seu Pedido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="pedidoForm">
+                    <div class="mb-3">
+                        <label for="tamanho" class="form-label">Qual Tamanho do Almoço?</label>
+                        <select class="form-select" id="tamanho" required>
+                            <option value="P">P</option>
+                            <option value="G">G</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Escolha os Acompanhamentos (máximo de 3):</label>
+                        <div id="acompanhamentos">
+                            <label><input type="checkbox" name="acompanhamento" value="Arroz" class="acompanhamento"> Arroz</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Macarrão" class="acompanhamento"> Macarrão</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Arroz Integral" class="acompanhamento"> Arroz Integral</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Feijão Tropeiro" class="acompanhamento"> Feijão Tropeiro</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Feijão de Caldo" class="acompanhamento"> Feijão de Caldo</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Salada Crua" class="acompanhamento"> Salada Crua</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Legumes com Grão de Bico" class="acompanhamento"> Legumes com Grão de Bico</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Legumes" class="acompanhamento"> Legumes</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Purê de Batatas" class="acompanhamento"> Purê de Batatas</label><br>
+                        </div>
+                        <div id="acompanhamentoWarning" class="text-danger" style="display:none;">Você pode escolher no máximo 3 acompanhamentos.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="observacao" class="form-label">Observações (máx. 100 caracteres):</label>
+                        <textarea class="form-control" id="observacao" rows="2" maxlength="100" placeholder="Escreva suas observações aqui..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pagamento" class="form-label">Forma de Pagamento:</label>
+                        <select class="form-select" id="pagamento" required>
+                            <option value="cartao_credito">Cartão de Crédito</option>
+                            <option value="cartao_debito">Cartão de Débito</option>
+                            <option value="dinheiro">Dinheiro</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="entrega" class="form-label">Entrega ou Retirada no Local?</label>
+                        <select class="form-select" id="entrega" required>
+                            <option value="entrega">Entrega</option>
+                            <option value="retirada">Retirada no Local</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelarPedido" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="confirmarPedido">Confirmar Pedido</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let pratoSelecionado = '';
+
+    $('#pedidoModal').on('show.bs.modal', function(event) {
+        const button = $(event.relatedTarget);
+        pratoSelecionado = button.data('prato');
+    });
+
+    document.querySelectorAll('.acompanhamento').forEach((checkbox) => {
+        checkbox.addEventListener('change', function() {
+            const checkedCount = document.querySelectorAll('input[name="acompanhamento"]:checked').length;
+            const warning = document.getElementById('acompanhamentoWarning');
+            if (checkedCount > 3) {
+                this.checked = false;
+                warning.style.display = 'block';
+            } else {
+                warning.style.display = 'none';
+            }
+        });
+    });
+
+    document.getElementById('confirmarPedido').onclick = function() {
+        const tamanho = document.getElementById('tamanho').value;
+        const pagamento = document.getElementById('pagamento').value;
+        const entrega = document.getElementById('entrega').value;
+        const observacao = document.getElementById('observacao').value;
+
+        const acompanhamentosSelecionados = Array.from(document.querySelectorAll('input[name="acompanhamento"]:checked'))
+            .map(el => el.value)
+            .join(', ');
+
+        const mensagem = `Olá, quero pedir o prato ${pratoSelecionado}. Tamanho: ${tamanho}, Acompanhamentos: ${acompanhamentosSelecionados}, Observações: ${observacao}, Forma de pagamento: ${pagamento}, Entrega ou Retirada: ${entrega}.`;
+        const telefone = '5571992168451';
+
+        window.open(`https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`, '_blank');
+        $('#pedidoModal').modal('hide');
+    };
+
+    document.getElementById('cancelarPedido').onclick = function() {
+        $('#pedidoModal').modal('hide');
+    };
+</script>
+
+
+        <!-- Quinta-feira -->
+<div class="mt-4">
+    <h3>Quinta-feira</h3>
+    <button class="btn btn-link" data-toggle="collapse" data-target="#quinta">Ver Pratos</button>
+    <div class="collapse" id="quinta">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Pratos Disponíveis na Quinta</h5>
+                                       <!-- Prato 1 -->
+                <div class="mt-2">
+                    <img src="images/pratoqui1.jpg" class="img-fluid" alt="Feijoada Carioca">
+                    <h6>Feijoada Carioca - Acompanhada com: Feijão preto, Arroz, Couve Refolgado</h6>
+                    <p> Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Feijoada Carioca">Comprar</button>
+                </div>
+
+                <!-- Prato 2 -->
+                <div class="mt-2">
+                    <img src="images/pratoqui2.jpg" class="img-fluid" alt="Carne do Sol Acebolada">
+                    <h6>Carne do Sol Acebolada</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Carne do Sol Acebolada">Comprar</button>
+                </div>
+
+                <!-- Prato 3 -->
+                <div class="mt-2">
+                    <img src="images/pratoqui3.jpg" class="img-fluid" alt="Omelete de Frango">
+                    <h6>Omelete de Frango</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Omelete de Frango">Comprar</button>
+                </div>
+
+                <!-- Prato 3 -->
+                <div class="mt-2">
+                    <img src="images/pratofix4.jpg" class="img-fluid" alt="Filé de Frango Grelhado">
+                    <h6>Filé de Frango Grelhado</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango Grelhado">Comprar</button>
+                </div>
+
+                <!-- Prato 4 -->
+                <div class="mt-2">
+                    <img src="images/pratofix5.jpg" class="img-fluid" alt="Filé de Frango à Parmegiana">
+                    <h6>Filé de Frango à Parmegiana</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango à Parmegiana">Comprar</button>
+                </div>
+
+                <!-- Prato 5 -->
+                <div class="mt-2">
+                    <img src="images/pratofix6.jpg" class="img-fluid" alt="Filé de Frango à Milanesa">
+                    <h6>Filé de Frango à Milanesa</h6>
+                    <p>Disponíveis Tamanhos P e G</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango à Milanesa">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Perguntas -->
+<div class="modal fade" id="pedidoModal" tabindex="-1" aria-labelledby="pedidoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pedidoModalLabel">Faça seu Pedido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="pedidoForm">
+                    <div class="mb-3">
+                        <label for="tamanho" class="form-label">Qual Tamanho do Almoço?</label>
+                        <select class="form-select" id="tamanho" required>
+                            <option value="P">P</option>
+                            <option value="G">G</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Escolha os Acompanhamentos (máximo de 3):</label>
+                        <div id="acompanhamentos">
+                            <label><input type="checkbox" name="acompanhamento" value="Arroz" class="acompanhamento"> Arroz</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Macarrão" class="acompanhamento"> Macarrão</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Arroz Integral" class="acompanhamento"> Arroz Integral</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Feijão Tropeiro" class="acompanhamento"> Feijão Tropeiro</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Feijão de Caldo" class="acompanhamento"> Feijão de Caldo</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Salada Crua" class="acompanhamento"> Salada Crua</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Legumes com Grão de Bico" class="acompanhamento"> Legumes com Grão de Bico</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Legumes" class="acompanhamento"> Legumes</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Purê de Batatas" class="acompanhamento"> Purê de Batatas</label><br>
+                        </div>
+                        <div id="acompanhamentoWarning" class="text-danger" style="display:none;">Você pode escolher no máximo 3 acompanhamentos.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="observacao" class="form-label">Observações (máx. 100 caracteres):</label>
+                        <textarea class="form-control" id="observacao" rows="2" maxlength="100" placeholder="Escreva suas observações aqui..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pagamento" class="form-label">Forma de Pagamento:</label>
+                        <select class="form-select" id="pagamento" required>
+                            <option value="cartao_credito">Cartão de Crédito</option>
+                            <option value="cartao_debito">Cartão de Débito</option>
+                            <option value="dinheiro">Dinheiro</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="entrega" class="form-label">Entrega ou Retirada no Local?</label>
+                        <select class="form-select" id="entrega" required>
+                            <option value="entrega">Entrega</option>
+                            <option value="retirada">Retirada no Local</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelarPedido" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="confirmarPedido">Confirmar Pedido</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let pratoSelecionado = '';
+
+    $('#pedidoModal').on('show.bs.modal', function(event) {
+        const button = $(event.relatedTarget);
+        pratoSelecionado = button.data('prato');
+    });
+
+    document.querySelectorAll('.acompanhamento').forEach((checkbox) => {
+        checkbox.addEventListener('change', function() {
+            const checkedCount = document.querySelectorAll('input[name="acompanhamento"]:checked').length;
+            const warning = document.getElementById('acompanhamentoWarning');
+            if (checkedCount > 3) {
+                this.checked = false;
+                warning.style.display = 'block';
+            } else {
+                warning.style.display = 'none';
+            }
+        });
+    });
+
+    document.getElementById('confirmarPedido').onclick = function() {
+        const tamanho = document.getElementById('tamanho').value;
+        const pagamento = document.getElementById('pagamento').value;
+        const entrega = document.getElementById('entrega').value;
+        const observacao = document.getElementById('observacao').value;
+
+        const acompanhamentosSelecionados = Array.from(document.querySelectorAll('input[name="acompanhamento"]:checked'))
+            .map(el => el.value)
+            .join(', ');
+
+        const mensagem = `Olá, quero pedir o prato ${pratoSelecionado}. Tamanho: ${tamanho}, Acompanhamentos: ${acompanhamentosSelecionados}, Observações: ${observacao}, Forma de pagamento: ${pagamento}, Entrega ou Retirada: ${entrega}.`;
+        const telefone = '5571992168451';
+
+        window.open(`https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`, '_blank');
+        $('#pedidoModal').modal('hide');
+    };
+
+    document.getElementById('cancelarPedido').onclick = function() {
+        $('#pedidoModal').modal('hide');
+    };
+</script>
+
+        <!-- Sexta-feira -->
+<div class="mt-4">
+    <h3>Sexta-feira</h3>
+    <button class="btn btn-link" data-toggle="collapse" data-target="#sexta">Ver Pratos</button>
+    <div class="collapse" id="sexta">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Pratos Disponíveis na Sexta</h5>
+                         <!-- Prato 1 -->
+                <div class="mt-2">
+                    <img src="images/pratosex1.jpg" class="img-fluid" alt="Comida Baiana c/Xinxim Frango">
+                    <h6>Comida Baiana c/Xinxim Frango - Acompanhada com: Caruru, Vatapa, Feijão Fradinho, Arroz e Farofa</h6>
+                    <p> Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Comida Baiana c/Xinxim Frango">Comprar</button>
+                </div>
+
+                <!-- Prato 2 -->
+                <div class="mt-2">
+                    <img src="images/pratosex2.jpg" class="img-fluid" alt="Comida Baiana c/Moqueca de Siri Catado">
+                    <h6>Comida Baiana c/Moqueca de Siri Catado - Acompanhada com: Caruru, Vatapa, Feijão Fradinho, Arroz e Farofa</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Comida Baiana c/Moqueca de Siri Catado">Comprar</button>
+                </div>
+
+                
+                <!-- Prato 3 -->
+                <div class="mt-2">
+                    <img src="images/pratofix4.jpg" class="img-fluid" alt="Filé de Frango Grelhado">
+                    <h6>Filé de Frango Grelhado</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango Grelhado">Comprar</button>
+                </div>
+
+                <!-- Prato 4 -->
+                <div class="mt-2">
+                    <img src="images/pratofix5.jpg" class="img-fluid" alt="Filé de Frango à Parmegiana">
+                    <h6>Filé de Frango à Parmegiana</h6>
+                    <p>Disponíveis Tamanhos P e G.</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango à Parmegiana">Comprar</button>
+                </div>
+
+                <!-- Prato 5 -->
+                <div class="mt-2">
+                    <img src="images/pratofix6.jpg" class="img-fluid" alt="Filé de Frango à Milanesa">
+                    <h6>Filé de Frango à Milanesa</h6>
+                    <p>Disponíveis Tamanhos P e G</p>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#pedidoModal" data-prato="Filé de Frango à Milanesa">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Perguntas -->
+<div class="modal fade" id="pedidoModal" tabindex="-1" aria-labelledby="pedidoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="pedidoModalLabel">Faça seu Pedido</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="pedidoForm">
+                    <div class="mb-3">
+                        <label for="tamanho" class="form-label">Qual Tamanho do Almoço?</label>
+                        <select class="form-select" id="tamanho" required>
+                            <option value="P">P</option>
+                            <option value="G">G</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Escolha os Acompanhamentos (máximo de 3):</label>
+                        <div id="acompanhamentos">
+                            <label><input type="checkbox" name="acompanhamento" value="Arroz" class="acompanhamento"> Arroz</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Macarrão" class="acompanhamento"> Macarrão</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Arroz Integral" class="acompanhamento"> Arroz Integral</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Feijão Tropeiro" class="acompanhamento"> Feijão Tropeiro</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Feijão de Caldo" class="acompanhamento"> Feijão de Caldo</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Salada Crua" class="acompanhamento"> Salada Crua</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Legumes com Grão de Bico" class="acompanhamento"> Legumes com Grão de Bico</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Legumes" class="acompanhamento"> Legumes</label><br>
+                            <label><input type="checkbox" name="acompanhamento" value="Purê de Batatas" class="acompanhamento"> Purê de Batatas</label><br>
+                        </div>
+                        <div id="acompanhamentoWarning" class="text-danger" style="display:none;">Você pode escolher no máximo 3 acompanhamentos.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="observacao" class="form-label">Observações (máx. 100 caracteres):</label>
+                        <textarea class="form-control" id="observacao" rows="2" maxlength="100" placeholder="Escreva suas observações aqui..."></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pagamento" class="form-label">Forma de Pagamento:</label>
+                        <select class="form-select" id="pagamento" required>
+                            <option value="cartao_credito">Cartão de Crédito</option>
+                            <option value="cartao_debito">Cartão de Débito</option>
+                            <option value="dinheiro">Dinheiro</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="entrega" class="form-label">Entrega ou Retirada no Local?</label>
+                        <select class="form-select" id="entrega" required>
+                            <option value="entrega">Entrega</option>
+                            <option value="retirada">Retirada no Local</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="cancelarPedido" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="confirmarPedido">Confirmar Pedido</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let pratoSelecionado = '';
+
+    $('#pedidoModal').on('show.bs.modal', function(event) {
+        const button = $(event.relatedTarget);
+        pratoSelecionado = button.data('prato');
+    });
+
+    document.querySelectorAll('.acompanhamento').forEach((checkbox) => {
+        checkbox.addEventListener('change', function() {
+            const checkedCount = document.querySelectorAll('input[name="acompanhamento"]:checked').length;
+            const warning = document.getElementById('acompanhamentoWarning');
+            if (checkedCount > 3) {
+                this.checked = false;
+                warning.style.display = 'block';
+            } else {
+                warning.style.display = 'none';
+            }
+        });
+    });
+
+    document.getElementById('confirmarPedido').onclick = function() {
+        const tamanho = document.getElementById('tamanho').value;
+        const pagamento = document.getElementById('pagamento').value;
+        const entrega = document.getElementById('entrega').value;
+        const observacao = document.getElementById('observacao').value;
+
+        const acompanhamentosSelecionados = Array.from(document.querySelectorAll('input[name="acompanhamento"]:checked'))
+            .map(el => el.value)
+            .join(', ');
+
+        const mensagem = `Olá, quero pedir o prato ${pratoSelecionado}. Tamanho: ${tamanho}, Acompanhamentos: ${acompanhamentosSelecionados}, Observações: ${observacao}, Forma de pagamento: ${pagamento}, Entrega ou Retirada: ${entrega}.`;
+        const telefone = '5571992168451';
+
+        window.open(`https://api.whatsapp.com/send?phone=${telefone}&text=${encodeURIComponent(mensagem)}`, '_blank');
+        $('#pedidoModal').modal('hide');
+    };
+
+    document.getElementById('cancelarPedido').onclick = function() {
+        $('#pedidoModal').modal('hide');
+    };
+</script>
+
+<section class="mt-5">
+    <h2>Dúvidas Frequentes</h2>
+    <div class="accordion" id="faqAccordion">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Quem somos nós?
+                    </button>
+                </h5>
+            </div>
+
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Uma empresa de vendas de alimentos caseiros e de qualidade, formada por Mulheres da Família Cabral.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Como funciona a entrega?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                <div class="card-body">
+                    Temos um motoboy à disposição e trabalhamos em dois pontos fixos de vendas na Região do Shopping Salvador - Localizado em Salvador-BA.
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Quanto custam os almoços?
+                    </button>
+                </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                <div class="card-body">
+                    O custo de cada almoço varia conforme o prato e o tamanho escolhido.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center py-4">
+    <p>© 2024 Paty Quentinhas. Todos os direitos reservados.</p>
+    <div class="social-media">
+        <a href="https://api.whatsapp.com/send?phone=5571992168451" target="_blank" class="me-3">
+            <i class="fab fa-whatsapp fa-2x"></i>
+        </a>
+        <a href="https://www.instagram.com/patyquentinhas1/" target="_blank">
+            <i class="fab fa-instagram fa-2x"></i>
+        </a>
+    </div>
+</footer>
+
+<!-- Adicione o CDN do Font Awesome no head do seu HTML -->
+ 
+<link rel="stylesheet" href="fontawesome/css/all.min.css">
+</body>
+</html>
